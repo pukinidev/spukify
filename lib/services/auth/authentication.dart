@@ -59,4 +59,8 @@ class AuthService {
     return null;
   }
 
+  void signOut()  {
+    FirebaseAuth.instance.signOut();
+  }
+
 }
