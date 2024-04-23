@@ -1,8 +1,6 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
-
 
   Future<String?> registration({
     required String email,

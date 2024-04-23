@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:spukify/screens/auth_view/login_view.dart';
-import 'package:spukify/services/auth/authentication.dart';
+import 'package:spukify/constants/theme.dart';
+import 'package:spukify/global/custom_appbar.dart';
+import 'package:spukify/global/custom_bottomnav.dart';
+
+import 'package:spukify/services/auth/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,24 +18,31 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Log in as $user'),
-            ElevatedButton(
-              onPressed: () {
-                AuthService().signOut();
-                Navigator.pop(context);
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginScreen()));
-              },
-              child: const Text('Sign Out'),
-            ),
-          ],
+      bottomNavigationBar: const CustomBottomNav(),
+      extendBodyBehindAppBar: true,
+      appBar: const CustomAppBar(),
+      body: Center(
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: gradient,
+          ),
+          child: Center(
+              child: ListView(
+            padding: const EdgeInsets.all(20),
+            children: [
+              const SizedBox(height: 90),
+              Text(
+                "Trending 🔥",
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'RobotoBlack',
+                    ),
+              ),
+            ],
+          )),
         ),
-      )
+      ),
     );
   }
 }

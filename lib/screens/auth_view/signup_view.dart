@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
 import 'package:spukify/screens/home_view/home_view.dart';
-import 'package:spukify/services/auth/authentication.dart';
+import 'package:spukify/services/auth/auth_service.dart';
 import 'package:spukify/widgets/auth/auth_widgets.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -70,13 +70,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       );
                       if (message!.contains('Success')) {
                         Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => const HomeScreen()));
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()));
                       }
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(message),
-                        ),
-                      );
                   },
                   gradient: gradient,
                   height: 46.0,

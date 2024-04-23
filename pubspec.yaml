@@ -25,3 +25,8 @@ flutter:
     - family: RobotoCondensed
       fonts:
         - asset: assets/fonts/RobotoCondensed.ttf
+    - family: RobotoBlack
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Black.ttf
+
+
