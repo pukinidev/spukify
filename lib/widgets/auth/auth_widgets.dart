@@ -49,18 +49,16 @@ class AppTitle extends StatelessWidget {
 
 // CustomUserFieldForm
 class CustomUserFieldForm extends StatelessWidget {
-  const CustomUserFieldForm({super.key, required this.emailcontroller, required this.passwordcontroller, required this.formKey});
+  const CustomUserFieldForm({super.key, required this.emailcontroller, required this.passwordcontroller});
 
   final TextEditingController emailcontroller;
   final TextEditingController passwordcontroller;
-  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
       child: Form(
-        key: formKey,
         child: Column(
           children: [
             TextFormField(
@@ -69,7 +67,6 @@ class CustomUserFieldForm extends StatelessWidget {
               decoration: const InputDecoration(
                 hintText: 'Email',
                 hintStyle: TextStyle(color: Colors.white),
-                iconColor: Colors.white,
                 prefixIcon: Icon(Icons.email),
               ),
             ),
@@ -80,7 +77,6 @@ class CustomUserFieldForm extends StatelessWidget {
               decoration: const InputDecoration(
                 hintText: 'Password',
                 hintStyle: TextStyle(color: Colors.white),
-                iconColor: Colors.white,
                 prefixIcon: Icon(Icons.lock),
               ),
               obscureText: true,

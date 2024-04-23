@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "646828750230",
+    "project_id": "spukify-app",
+    "storage_bucket": "spukify-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646828750230:android:cc225034326c51fcb199b7",
+        "android_client_info": {
+          "package_name": "com.example.spukify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8a4wXSwaRDHXd4ZjHamUWThCcAJU-FQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

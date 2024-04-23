@@ -2,9 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
 import 'package:spukify/screens/auth_view/signup_view.dart';
+import 'package:spukify/screens/home_view/home_view.dart';
+import 'package:spukify/services/auth/authentication.dart';
 import 'package:spukify/widgets/auth/auth_widgets.dart';
-
-
 
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +17,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -32,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
-              'https://github.com/pukinidev/spukify/blob/main/lib/assets/images/background_login.png?raw=true'),
+              'https://github.com/pukinidev/spukify/blob/main/assets/background.png?raw=true'),
           fit: BoxFit.cover,
         ),
       ),
@@ -59,12 +58,29 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               CustomUserFieldForm(
                   emailcontroller: _emailController,
-                  passwordcontroller: _passwordController, formKey: _formKey),
+                  passwordcontroller: _passwordController),
               const SizedBox(
                 height: 30,
               ),
               GradientButton(
-                onPressed: () {},
+                onPressed:  () async {
+                  final message = await AuthService().login(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                  );
+                  if (message!.contains('Success')) {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
+                  }
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(message),
+                    ),
+                  );
+                },
                 gradient: gradient,
                 height: 46.0,
                 width: 121.0,
