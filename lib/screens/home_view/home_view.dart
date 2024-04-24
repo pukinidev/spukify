@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
 import 'package:spukify/global/custom_appbar.dart';
@@ -27,20 +28,42 @@ class _HomeScreenState extends State<HomeScreen> {
             gradient: gradient,
           ),
           child: Center(
-              child: ListView(
-            padding: const EdgeInsets.all(20),
-            children: [
-              const SizedBox(height: 90),
-              Text(
-                "Trending 🔥",
-                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'RobotoBlack',
+            child: ListView(
+              padding: const EdgeInsets.all(20),
+              children: [
+                const SizedBox(height: 90),
+                Row(
+                  children: [
+                    Text(
+                      "Trending 🔥",
+                      style:
+                          Theme.of(context).textTheme.headlineMedium!.copyWith(
+                                color: Theme.of(context).colorScheme.onPrimary,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'RobotoBlack',
+                              ),
                     ),
-              ),
-            ],
-          )),
+                    const Spacer(),
+                    RichText(
+                      text: TextSpan(
+                        text: "See all",
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'RobotoBlack',
+                              fontSize: 16,
+                            ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            // Navigate to see all trending
+                          },
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
