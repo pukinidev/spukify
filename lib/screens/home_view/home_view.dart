@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
 import 'package:spukify/global/custom_appbar.dart';
 import 'package:spukify/global/custom_bottomnav.dart';
-
 import 'package:spukify/services/auth/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -60,6 +59,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     )
                   ],
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    AuthService().signOut();
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  child: const Text("Sign Out"),
                 ),
               ],
             ),

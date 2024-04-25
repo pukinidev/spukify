@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               GradientButton(
                 onPressed:  () async {
-                  final message = await AuthService().login(
+                  final message = await AuthService().signIn(
                     email: _emailController.text,
                     password: _passwordController.text,
                   );
@@ -111,9 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         decorationColor: Theme.of(context).primaryColor,
                       ),
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => const SignUpScreen())),
+                    ..onTap = () => Navigator.of(context).pushNamed('/signup'),
                 ),
               ]))
             ],
