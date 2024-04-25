@@ -48,7 +48,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      initialRoute: '/login',
+      initialRoute: FirebaseAuth.instance.currentUser == null ? '/login' : '/home',
       routes: {
         '/home':(context) => const HomeScreen(),
         '/login':(context) => const LoginScreen(),
