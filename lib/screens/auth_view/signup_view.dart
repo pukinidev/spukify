@@ -71,8 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         content: Text('Account created successfully!'),
                       ),
                     );
-                    Navigator.pop(context);
-                    Navigator.pushReplacementNamed(context, '/home');
+                   await Navigator.popAndPushNamed(context, '/home');
                   }
                 },
                 gradient: gradient,
@@ -103,7 +102,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/login');
                 },
               )
             ],

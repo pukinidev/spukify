@@ -6,7 +6,6 @@ import 'package:spukify/screens/home_view/home_view.dart';
 import 'package:spukify/services/auth/auth_service.dart';
 import 'package:spukify/widgets/auth/auth_widgets.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -63,17 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 30,
               ),
               GradientButton(
-                onPressed:  () async {
+                onPressed: () async {
                   final message = await AuthService().signIn(
                     email: _emailController.text,
                     password: _passwordController.text,
                   );
                   if (message!.contains('Success')) {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    );
+                    await Navigator.of(context).pushReplacementNamed('/home');
                   }
                 },
                 gradient: gradient,
@@ -111,7 +106,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         decorationColor: Theme.of(context).primaryColor,
                       ),
                   recognizer: TapGestureRecognizer()
-                    ..onTap = () => Navigator.of(context).pushNamed('/signup'),
+                    ..onTap = () {
+                      Navigator.popAndPushNamed(context, '/signup');
+                    },
                 ),
               ]))
             ],
