@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spukify/screens/auth_view/profile_view.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -9,7 +10,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      iconTheme: const IconThemeData(color: Colors.white),
       title: Text(
         "Home",
         style: Theme.of(context).textTheme.headlineMedium!.copyWith(
@@ -44,7 +44,7 @@ List<Widget> appBarActions(BuildContext context) {
             size: 35,
           ),
           onPressed: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfileScreen()));
           },
         ),
       ];

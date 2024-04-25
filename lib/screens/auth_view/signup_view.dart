@@ -71,8 +71,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         content: Text('Account created successfully!'),
                       ),
                     );
-                    Navigator.pop(context, '/login');
-                    await Navigator.popAndPushNamed(context, '/home');
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                        (route) => false);
                   }
                 },
                 gradient: gradient,

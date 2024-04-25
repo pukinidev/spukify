@@ -62,14 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    AuthService().signOut();
-                    Navigator.pop(context);
-                    Navigator.pushNamed(context, '/login');
-                  },
-                  child: const Text("Sign Out"),
-                ),
+                
               ],
             ),
           ),
