@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
 import 'package:spukify/screens/auth_view/signup_view.dart';
-import 'package:spukify/screens/home_view/home_view.dart';
+import 'package:spukify/screens/home_view.dart';
 import 'package:spukify/services/auth/auth_service.dart';
 import 'package:spukify/widgets/auth/auth_widgets.dart';
 
