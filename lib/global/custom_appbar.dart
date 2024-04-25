@@ -45,7 +45,7 @@ List<Widget> appBarActions(BuildContext context) {
             size: 35,
           ),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfileScreen()));
+            Navigator.of(context).pushNamed('/profile');
           },
         ),
       ];

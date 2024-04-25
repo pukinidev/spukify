@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:spukify/screens/auth_view/profile_view.dart';
+import 'package:spukify/screens/auth_view/signup_view.dart';
 import 'package:spukify/screens/home_view.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +50,13 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home: FirebaseAuth.instance.currentUser == null ? const LoginScreen() : const HomeScreen(),
+      initialRoute: FirebaseAuth.instance.currentUser == null ? '/login' : '/home',
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/signup': (context) => const SignUpScreen(),
+      }
     );
   }
 }

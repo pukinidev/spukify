@@ -71,9 +71,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         content: Text('Account created successfully!'),
                       ),
                     );
-                    Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()),
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                        '/home',
                         (route) => false);
                   }
                 },

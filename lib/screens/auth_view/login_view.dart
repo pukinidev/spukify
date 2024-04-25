@@ -68,10 +68,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     password: _passwordController.text,
                   );
                   if (message!.contains('Success')) {
-                    await Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
+                    await Navigator.of(context).pushReplacementNamed(
+                      '/home',
                     );
                   }
                 },
@@ -111,11 +109,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Navigator.push(
+                      Navigator.pushNamed(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignUpScreen(),
-                        ),
+                        '/signup',  
                       );
                     },
                 ),
