@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:spukify/screens/auth_view/signup_view.dart';
 import 'package:spukify/screens/home_view/home_view.dart';
+import 'package:spukify/screens/profile_view/profile_view.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
@@ -54,6 +55,7 @@ class _MainAppState extends State<MainApp> {
         '/home':(context) => const HomeScreen(),
         '/login':(context) => const LoginScreen(),
         '/signup':(context) => const SignUpScreen(),
+        '/profile':(context) => const ProfileScreen(),
       },
     );
   }

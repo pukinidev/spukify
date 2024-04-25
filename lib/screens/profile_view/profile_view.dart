@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:spukify/constants/theme.dart';
+import 'package:spukify/global/custom_appbar.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -10,6 +14,18 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: const CustomAppBar(),
+      backgroundColor: Colors.transparent,
+      extendBodyBehindAppBar: true,
+      body: Center(
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: gradient,
+          ),
+          child: Center(child: Text('Profile')),
+        )
+      ),
+    );
   }
 }

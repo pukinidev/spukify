@@ -9,6 +9,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: const IconThemeData(color: Colors.white),
       title: Text(
         "Home",
         style: Theme.of(context).textTheme.headlineMedium!.copyWith(
@@ -23,16 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           height: 1,
         ),
       ),
-      actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.account_circle_rounded,
-            color: Colors.white,
-            size: 35,
-          ),
-          onPressed: () {},
-        ),
-      ],
+      actions: appBarActions(context),
       backgroundColor: Colors.transparent,
       elevation: 0,
     );
@@ -40,3 +32,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 
+List<Widget> appBarActions(BuildContext context) {
+    if(ModalRoute.of(context)!.settings.name == '/profile') {
+      return [];
+    } else {
+      return [
+        IconButton(
+          icon: const Icon(
+            Icons.account_circle_rounded,
+            color: Colors.white,
+            size: 35,
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, '/profile');
+          },
+        ),
+      ];
+    }
+}
