@@ -69,7 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                   if (message!.contains('Success')) {
                     await Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => const HomeScreen()));
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
                   }
                 },
                 gradient: gradient,
