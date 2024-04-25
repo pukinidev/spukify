@@ -20,7 +20,7 @@ class Logo extends StatelessWidget {
           end: Alignment(1, 1),
         ),
         size: 140,
-        ),
+      ),
     );
   }
 }
@@ -31,7 +31,8 @@ class AppTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: const EdgeInsets.only(top: 20),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
       child: Text(
         'SPUKIFY',
         style: TextStyle(
@@ -41,7 +42,6 @@ class AppTitle extends StatelessWidget {
           letterSpacing: 4,
           foreground: Paint()..shader = titlelinearGradient,
         ),
-        
       ),
     );
   }
@@ -49,42 +49,57 @@ class AppTitle extends StatelessWidget {
 
 // CustomUserFieldForm
 class CustomUserFieldForm extends StatelessWidget {
-  const CustomUserFieldForm({super.key, required this.emailcontroller, required this.passwordcontroller});
+  const CustomUserFieldForm(
+      {super.key,
+      required this.emailcontroller,
+      required this.passwordcontroller,
+      required this.togglePasswordVisibility,
+      required this.passwordvisibility});
 
   final TextEditingController emailcontroller;
   final TextEditingController passwordcontroller;
+  final Function()? togglePasswordVisibility;
+  final bool passwordvisibility;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
-      child: Form(
-        child: Column(
-          children: [
-            TextFormField(
-              controller: emailcontroller,
-              style: const TextStyle(color: Colors.white),
-              decoration: const InputDecoration(
-                hintText: 'Email',
-                hintStyle: TextStyle(color: Colors.white),
-                prefixIcon: Icon(Icons.email),
+        padding:
+            const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
+        child: Form(
+          child: Column(
+            children: [
+              TextFormField(
+                controller: emailcontroller,
+                style: const TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                  hintText: 'Email',
+                  hintStyle: TextStyle(color: Colors.white),
+                  prefixIcon: Icon(Icons.email),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            TextFormField(
-              controller: passwordcontroller,
-              style: const TextStyle(color: Colors.white),
-              decoration: const InputDecoration(
-                hintText: 'Password',
-                hintStyle: TextStyle(color: Colors.white),
-                prefixIcon: Icon(Icons.lock),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: passwordcontroller,
+                style: const TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  hintStyle: const TextStyle(color: Colors.white),
+                  prefixIcon: const Icon(Icons.lock),
+                  suffixIcon: IconButton(
+                    onPressed: togglePasswordVisibility,
+                    icon: Icon(
+                        passwordvisibility
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        color: passwordvisibility ? Colors.white : Colors.grey),
+                  ),
+                ),
+                obscureText: !passwordvisibility,
               ),
-              obscureText: true,
-            ),
-          ],
-        ),
-      )
-    );
+            ],
+          ),
+        ));
   }
 }
 
@@ -129,5 +144,3 @@ class GradientButton extends StatelessWidget {
     );
   }
 }
-
-

@@ -13,12 +13,25 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  late bool _passwordvisibility;
+
+  @override
+  void initState() {
+    _passwordvisibility = false;
+    super.initState();
+  }
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _passwordvisibility = !_passwordvisibility;
+    });
   }
 
   @override
@@ -54,7 +67,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               CustomUserFieldForm(
                   emailcontroller: _emailController,
-                  passwordcontroller: _passwordController),
+                  passwordcontroller: _passwordController,
+                  togglePasswordVisibility: _togglePasswordVisibility,
+                  passwordvisibility: _passwordvisibility),
               const SizedBox(
                 height: 30,
               ),
