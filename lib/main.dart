@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:spukify/screens/auth_view/signup_view.dart';
 import 'package:spukify/screens/home_view.dart';
-import 'package:spukify/screens/auth_view/profile_view.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
