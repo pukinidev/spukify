@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spukify/screens/auth_view/profile_view.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});

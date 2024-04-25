@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:spukify/constants/theme.dart';
 import 'package:spukify/global/custom_appbar.dart';
-import 'package:spukify/screens/auth_view/login_view.dart';
 import 'package:spukify/services/auth/auth_service.dart';
 
 class ProfileScreen extends StatefulWidget {

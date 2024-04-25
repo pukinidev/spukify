@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
-import 'package:spukify/screens/home_view.dart';
 import 'package:spukify/services/auth/auth_service.dart';
 import 'package:spukify/widgets/auth/auth_widgets.dart';
 
