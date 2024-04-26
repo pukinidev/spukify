@@ -107,14 +107,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 20,
               ),
               InkWell(
-                child: Text(
-                  'Return to Login',
+                child: const Text(
+                  'Go back',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: primaryColor,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
-                    decorationColor: Theme.of(context).primaryColor,
+                    decorationColor: primaryColor,
                   ),
                 ),
                 onTap: () {

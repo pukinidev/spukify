@@ -15,8 +15,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(),
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.transparent,
       body: Center(
           child: Container(
         decoration: const BoxDecoration(
@@ -27,6 +25,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: ListView(
             children: [
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                ),
                 onPressed: () {
                   AuthService().signOut();
                   Navigator.of(context).pushNamedAndRemoveUntil(

@@ -51,7 +51,7 @@ class AuthService {
   }
 
   Future<String?> currentUser() async {
-    final user = await _auth.currentUser;
+    final user = _auth.currentUser;
     if (user != null) {
       final email = user.email;
       return email;

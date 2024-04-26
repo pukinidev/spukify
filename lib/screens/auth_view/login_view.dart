@@ -115,10 +115,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextSpan(
                   text: 'Sign Up',
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: Theme.of(context).primaryColor,
+                        color: primaryColor,
                         fontSize: 14,
                         decoration: TextDecoration.underline,
-                        decorationColor: Theme.of(context).primaryColor,
+                        decorationColor: primaryColor,
                       ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {

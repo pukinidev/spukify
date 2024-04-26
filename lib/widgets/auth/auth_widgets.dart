@@ -64,42 +64,44 @@ class CustomUserFieldForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding:
-            const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
-        child: Form(
-          child: Column(
-            children: [
-              TextFormField(
-                controller: emailcontroller,
-                style: const TextStyle(color: Colors.white),
-                decoration: const InputDecoration(
-                  hintText: 'Email',
-                  hintStyle: TextStyle(color: Colors.white),
-                  prefixIcon: Icon(Icons.email),
+      padding: const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
+      child: Form(
+        child: Column(
+          children: [
+            TextFormField(
+              controller: emailcontroller,
+              style: const TextStyle(color: Colors.white),
+              decoration: const InputDecoration(
+                hintText: 'Email',
+                hintStyle: TextStyle(color: Colors.white),
+                prefixIcon: Icon(Icons.email),
+              ),
+              keyboardType: TextInputType.emailAddress,
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              controller: passwordcontroller,
+              style: const TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                hintText: 'Password',
+                hintStyle: const TextStyle(color: Colors.white),
+                prefixIcon: const Icon(Icons.lock),
+                suffixIcon: IconButton(
+                  onPressed: togglePasswordVisibility,
+                  icon: Icon(
+                      passwordvisibility
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: passwordvisibility ? Colors.white : Colors.grey),
                 ),
               ),
-              const SizedBox(height: 20),
-              TextFormField(
-                controller: passwordcontroller,
-                style: const TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  hintText: 'Password',
-                  hintStyle: const TextStyle(color: Colors.white),
-                  prefixIcon: const Icon(Icons.lock),
-                  suffixIcon: IconButton(
-                    onPressed: togglePasswordVisibility,
-                    icon: Icon(
-                        passwordvisibility
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: passwordvisibility ? Colors.white : Colors.grey),
-                  ),
-                ),
-                obscureText: !passwordvisibility,
-              ),
-            ],
-          ),
-        ));
+              obscureText: !passwordvisibility,
+              keyboardType: TextInputType.visiblePassword,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -9,20 +9,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      iconTheme: const IconThemeData(color: Colors.white),
       title: Text(
         "Home",
         style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoBlack'),
-      ),
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(1.0),
-        child: Container(
-          color: Theme.of(context).colorScheme.onPrimary,
-          height: 1,
-        ),
       ),
       actions: appBarActions(context),
       backgroundColor: Colors.transparent,

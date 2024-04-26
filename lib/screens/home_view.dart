@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const CustomBottomNav(),
-      extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(),
       body: Center(
         child: Container(
@@ -31,14 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView(
               padding: const EdgeInsets.all(20),
               children: [
-                const SizedBox(height: 90),
                 Row(
                   children: [
                     Text(
                       "Trending 🔥",
                       style:
                           Theme.of(context).textTheme.headlineMedium!.copyWith(
-                                color: Theme.of(context).colorScheme.onPrimary,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'RobotoBlack',
                               ),
@@ -48,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       text: TextSpan(
                         text: "See all",
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              color: Theme.of(context).colorScheme.onPrimary,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontFamily: 'RobotoBlack',
                               fontSize: 16,

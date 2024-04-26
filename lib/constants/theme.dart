@@ -6,7 +6,7 @@ const Color primaryColor = Color.fromRGBO(115, 72, 170, 1);
 const Color secondaryColor = Color.fromRGBO(69, 57, 214, 1);
 
 final theme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+  colorScheme: ColorScheme.fromSeed(seedColor: primaryColor, brightness: Brightness.dark),
   textTheme: GoogleFonts.robotoTextTheme(),
 );
 
