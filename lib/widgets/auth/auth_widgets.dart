@@ -3,6 +3,8 @@ import 'package:gradient_icon/gradient_icon.dart';
 import 'package:spukify/constants/theme.dart';
 
 class Logo extends StatelessWidget {
+
+  
   const Logo({super.key});
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class Logo extends StatelessWidget {
 }
 
 // AppTitle
+// Baguettify -> Super Awesome Name
 class AppTitle extends StatelessWidget {
   const AppTitle({super.key});
 
