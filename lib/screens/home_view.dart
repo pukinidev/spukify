@@ -1,9 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:spukify/constants/theme.dart';
 import 'package:spukify/global/custom_appbar.dart';
 import 'package:spukify/global/custom_bottomnav.dart';
-import 'package:spukify/services/auth/auth_service.dart';
+import 'package:spukify/widgets/music/artists_widgets.dart';
+import '../models/artist.dart';
+import '../services/music/artist_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,7 +15,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  final user = AuthService().currentUser();
+  List<Artist> _artists = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadArtists();
+  }
+
+  // Load artists
+  void _loadArtists() async {
+    final artists = await ArtistService().getArtists();
+    setState(() {
+      _artists = artists;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: const CustomBottomNav(),
       appBar: const CustomAppBar(),
       body: Center(
-        child: Container(
-          decoration: const BoxDecoration(
-            gradient: gradient,
-          ),
-          child: Center(
             child: ListView(
               padding: const EdgeInsets.all(20),
               children: [
                 Row(
                   children: [
                     Text(
-                      "Trending 🔥",
+                      "Top Artists 🔥",
                       style:
                           Theme.of(context).textTheme.headlineMedium!.copyWith(
-                                color: Colors.white,
+                                color: Theme.of(context).primaryColor,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'RobotoBlack',
                               ),
@@ -46,26 +56,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       text: TextSpan(
                         text: "See all",
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              color: Colors.white,
+                              color: Theme.of(context).primaryColor,
                               fontWeight: FontWeight.bold,
                               fontFamily: 'RobotoBlack',
                               fontSize: 16,
                             ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            // Navigate to see all trending
+                            // Navigate to all artists
                           },
                       ),
                     )
                   ],
+
                 ),
                 const SizedBox(height: 20),
-                
               ],
             ),
           ),
-        ),
-      ),
     );
   }
 }

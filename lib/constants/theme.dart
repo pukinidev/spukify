@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const Color primaryColor = Color.fromRGBO(115, 72, 170, 1);
+const Color primaryColor = Colors.deepPurpleAccent;
 const Color secondaryColor = Color.fromRGBO(69, 57, 214, 1);
 
 final theme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(seedColor: primaryColor, brightness: Brightness.dark),
+  colorScheme: ColorScheme.fromSeed(seedColor: primaryColor, brightness: Brightness.light),
   textTheme: GoogleFonts.robotoTextTheme(),
 );
 

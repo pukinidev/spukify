@@ -13,6 +13,7 @@ class CustomBottomNav extends StatelessWidget {
             icon: Icon(
               Icons.home,
               size: 30,
+              color: Colors.deepPurpleAccent,
             ),
             label: 'Home',
           ),
@@ -20,6 +21,7 @@ class CustomBottomNav extends StatelessWidget {
             icon: Icon(
               Icons.search,
               size: 30,
+              color: Colors.deepPurpleAccent,
             ),
             label: 'Search',
           ),
@@ -27,9 +29,12 @@ class CustomBottomNav extends StatelessWidget {
             icon: Icon(
               Icons.library_music,
               size: 30,
+              color: Colors.deepPurpleAccent,
             ),
             label: 'Library',
           ),
-        ]);
+        ],
+      backgroundColor: Colors.white,
+    );
   }
 }

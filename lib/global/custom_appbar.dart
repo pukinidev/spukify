@@ -8,21 +8,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return AppBar(
       title: Text(
-        "Home",
+        routeName(ModalRoute.of(context)!.settings.name!),
         style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-            color: Colors.white,
+            color: Theme.of(context).primaryColor,
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoBlack'),
       ),
       actions: appBarActions(context),
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       elevation: 0,
     );
   }
 }
-
 
 List<Widget> appBarActions(BuildContext context) {
     if(ModalRoute.of(context)!.settings.name == '/profile') {
@@ -32,7 +32,7 @@ List<Widget> appBarActions(BuildContext context) {
         IconButton(
           icon: const Icon(
             Icons.account_circle_rounded,
-            color: Colors.white,
+            color: Colors.deepPurpleAccent,
             size: 35,
           ),
           onPressed: () {
@@ -41,4 +41,19 @@ List<Widget> appBarActions(BuildContext context) {
         ),
       ];
     }
+}
+
+Map<String, String> routes = {
+  '/home': 'Home',
+  '/profile': 'Profile',
+};
+
+String routeName(String route) {
+  String name = '';
+  routes.forEach((key, value) {
+    if (key == route) {
+      name = value;
+    }
+  });
+  return name;
 }
