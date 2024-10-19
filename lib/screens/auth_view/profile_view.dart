@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spukify/constants/theme.dart';
 import 'package:spukify/global/custom_appbar.dart';
 import 'package:spukify/services/auth/auth_service.dart';
 

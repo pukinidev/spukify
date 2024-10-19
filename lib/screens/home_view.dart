@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/global/custom_appbar.dart';
 import 'package:spukify/global/custom_bottomnav.dart';
-import 'package:spukify/widgets/music/artists_widgets.dart';
 import '../models/artist.dart';
 import '../services/music/artist_service.dart';
 
