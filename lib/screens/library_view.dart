@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../global/custom_appbar.dart';
 import '../global/custom_bottomnav.dart';
 
@@ -17,7 +16,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
       bottomNavigationBar: CustomBottomNav(),
       appBar: CustomAppBar(),
       body: Center(
-       child: Text('Library'),
+        child: Text('Library'),
       ),
     );
   }

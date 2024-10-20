@@ -5,7 +5,7 @@ class CustomBottomNav extends StatefulWidget {
   const CustomBottomNav({super.key});
 
   @override
-  State <CustomBottomNav> createState() => _CustomBottomNavState();
+  State<CustomBottomNav> createState() => _CustomBottomNavState();
 }
 
 class _CustomBottomNavState extends State<CustomBottomNav> {
@@ -21,7 +21,8 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
   void _selectRoute(int index) {
     final String? selectedRoute = routes[routesNav[index]];
     if (selectedRoute != null) {
-      Navigator.pushNamedAndRemoveUntil(context, routesNav[index], (route) => false);
+      Navigator.pushNamedAndRemoveUntil(
+          context, routesNav[index], (route) => false);
     }
   }
 
