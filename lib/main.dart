@@ -4,6 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:spukify/screens/auth_view/profile_view.dart';
 import 'package:spukify/screens/auth_view/signup_view.dart';
 import 'package:spukify/screens/home_view.dart';
+import 'package:spukify/screens/library_view.dart';
+import 'package:spukify/screens/search_view.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:spukify/constants/theme.dart';
@@ -54,6 +56,8 @@ class _MainAppState extends State<MainApp> {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
+        '/library': (context) => const LibraryScreen(),
+        '/search': (context) => const SearchScreen(),
         '/profile': (context) => const ProfileScreen(),
         '/signup': (context) => const SignUpScreen(),
       }

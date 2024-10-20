@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spukify/constants/routes.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -43,10 +44,7 @@ List<Widget> appBarActions(BuildContext context) {
     }
 }
 
-Map<String, String> routes = {
-  '/home': 'Home',
-  '/profile': 'Profile',
-};
+
 
 String routeName(String route) {
   String name = '';
